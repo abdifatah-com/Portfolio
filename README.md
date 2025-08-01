@@ -1,91 +1,111 @@
-# 🔗 [portfolio-jirihofman.vercel.app](https://portfolio-jirihofman.vercel.app)
+🔗 your-portfolio-url.vercel.app
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https%3A%2F%2Fgithub.com%2Fjirihofman%2Fportfolio&env=GH_TOKEN,VC_TOKEN)
+My personal portfolio website, built with Next.js, styled with Tailwind CSS, and deployed on Vercel. Inspired by projects like chronark and leerob.io.
 
-My personal portfolio website, built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) and deployed to [Vercel](https://vercel.com/). Based on [chronark's site](https://chronark.com/). Some ideas borrowed from [leerob/leerob.io](https://github.com/leerob/leerob.io).
+This repository is designed as a template for other developers' portfolios, fetching live data from GitHub and Vercel APIs to display user info and projects dynamically.
 
-It is supposed to be used as a **template for other GitHub users' portfolios**. Data about user and projects are gathered via GitHub and Vercel API.
+Tech Stack
+Framework: Next.js
 
-## Tech stack
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Deployment**: [Vercel](https://vercel.com)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com)
+Deployment: Vercel
 
-## Project Information Features
+Styling: Tailwind CSS
 
-The portfolio automatically displays comprehensive information for each repository in the `/projects` page. Here's what visitors can expect to see for each project:
+Features
+Repository Details
+Gradient-styled project names with clickable links
 
-### Repository Details
-- **Project name** with gradient styling and clickable links
-- **Description** from GitHub repository
-- **Creation date** showing when the project was started
-- **Star count** with compact number formatting
-- **GitHub repository link** for easy access to source code
+GitHub repository descriptions
 
-### Repository Analytics (for your own repositories)
-- **Visitor statistics**: Unique repository visitors in the last 14 days and today
-- **Security alerts**: Dependabot alerts categorized by severity (critical, high, medium, low)
-- **AI assistance**: Count of merged Copilot pull requests in the last 2 weeks
+Creation dates of projects
 
-### Deployment & Technology Detection
-- **Vercel integration**: Shows deployment status, Node.js version, and framework info
-- **Framework detection**: 
-  - Next.js projects with Pages Router, App Router, or hybrid detection
-  - Turbopack usage indicator
-  - Next.js version upgrade recommendations
-- **UI library detection**: Automatically identifies Tailwind CSS, React Bootstrap, Primer, and other libraries from package.json
+Star counts with compact formatting
 
-### Data Sources
-- **GitHub API**: Repository information, traffic data, security alerts, pull requests
-- **Vercel API**: Deployment information and project details
-- **GraphQL queries**: Pinned repositories and organization data
+Direct GitHub repo links
 
-All data is cached and refreshed automatically to ensure good performance while providing up-to-date information.
-## Running Locally
+Repository Analytics (for your repositories)
+Visitor stats (last 14 days + today)
 
+Security alerts by severity (critical, high, medium, low)
 
-```sh
-git clone https://github.com/jirihofman/portfolio.git
-cd portfolio
-```
+AI-assisted PRs merged (e.g., GitHub Copilot stats)
 
-### Environment variables
-Create a `.env` file similar to [`.env.example`](https://github.com/jirihofman/profile/blob/main/.env.example).
-```sh
+Deployment & Technology Detection
+Vercel deployment status, Node.js, and framework details
+
+Detection of Next.js routing methods (Pages, App, Hybrid)
+
+Turbopack usage indicator
+
+Next.js version upgrade suggestions
+
+Auto-detection of UI libraries like Tailwind CSS, React Bootstrap, Primer from package.json
+
+Data Sources
+GitHub API for repo info, traffic, security, PRs
+
+Vercel API for deployment details
+
+GraphQL for pinned repos and org data
+
+All data is cached and refreshed regularly to balance performance and freshness.
+
+Running Locally
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/your-repo.git
+cd your-repo
+Environment variables
+Copy .env.example to .env.local and add your tokens:
+
+bash
+Copy
+Edit
 mv .env.example .env.local
-```
-Add GitHub token into the new file.
-```sh
-GH_TOKEN=YOUR_GH_TOKEN
-# If you have Vercel projects, create a token here https://vercel.com/account/tokens to get more info.
-VC_TOKEN=YOUR_VERCEL_TOKEN
-```
+Add:
 
-Then install dependencies and run the development server:
-```sh
-# Install dependencies.
+bash
+Copy
+Edit
+GH_TOKEN=YOUR_GITHUB_TOKEN
+VC_TOKEN=YOUR_VERCEL_TOKEN  # Optional, for Vercel project details
+Install and run
+bash
+Copy
+Edit
 npm install
-# Replace jirihofman's personal info with octocat's.
+npm run setup    # Replace template data with your own
+npm run dev
+Open http://localhost:3000 to view.
+
+Customizing Your Portfolio
+Update your personal info in data.json
+
+Adjust styles or layout components in the codebase as needed
+
+Cloning / Forking
+Before deploying your own version, run:
+
+bash
+Copy
+Edit
 npm run setup
-# Start hacking.
-npm dev
-```
+This replaces the template’s personal info with yours.
 
-Edit `data.json` to put your personal information there.
+To prevent your data from being overwritten on build, set:
 
-
-## Cloning / Forking
-
-Please remove all of my personal information in `data.json` before deploying your own version of this site by running `npm run setup`. Once you are happy with your `data.json`, set
-```sh
-# .env or .env.local
-
+bash
+Copy
+Edit
 IS_TEMPLATE=false
-```
-in your ENVs to prevent `npm build` from reverting `data.json` back to Octocat's data.
+in your .env or .env.local.
 
-### To check before deploying
-- [ ] `data.json`: githubUsername, description, heroNames. Handled by `setup.mjs`.
-- [ ] `README.md`: link at the top
-- [ ] `app/layout.jsx`: metadata - title, description, favicon. Handled by `setup.mjs`.
-- [ ] `public/favicon.ico`. Handled by `setup.mjs`.
+Checklist Before Deployment
+ data.json: Update githubUsername, description, heroNames (managed by setup.mjs)
+
+ README.md: Update links and personal info
+
+ app/layout.jsx: Update metadata including title, description, favicon
+
+ public/favicon.ico: Replace with your own favicon
