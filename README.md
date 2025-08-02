@@ -54,7 +54,7 @@ Running Locally
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/abdifatah-com/Portfolio.git
 cd your-repo
 Environment variables
 Copy .env.example to .env.local and add your tokens:
